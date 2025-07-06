@@ -61,7 +61,6 @@ export_csv(df_clean, 'resultado.csv')
 
 ---
 
----
 
 ## How to Contribute
 
