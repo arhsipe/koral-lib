@@ -1,48 +1,84 @@
-# KORAL - Biblioteca de Análise de Dados Modular
+# KORAL - Modular Data Analysis Library
 
-KORAL é uma biblioteca Python didática e modular criada para facilitar operações comuns de análise de dados.  
-Ela foi desenvolvida como um exercício de organização de código, reutilização de funções e boas práticas em Python.
+**KORAL** is an educational and modular Python library designed to simplify common tasks in data analysis.  
+It was developed as an exercise in code organization, function reuse, and best practices in Python.
 
-## Funcionalidades
+---
 
-- Leitura de arquivos CSV e Excel
-- Limpeza de dados ausentes
-- Resumo estatístico descritivo
-- Visualização com gráficos de barra, linha e histograma
-- Exportação de resultados para CSV, JSON e Excel
+## Features
 
-## Organização do Código
+- Reading CSV and Excel files  
+- Handling missing data  
+- Descriptive statistical summaries  
+- Visualizations with bar charts, line plots, and histograms  
+- Exporting results to CSV, JSON, and Excel
 
-coral/
-├── coral/
-│ ├── io.py # Leitura e exportação de dados
-│ ├── core.py # Processamento e análise básica
-│ ├── viz.py # Visualização com matplotlib/seaborn
-│ └── init.py
-├── exemplo.csv # Arquivo de dados para teste
-├── test_script.py # Script de uso da biblioteca
+---
 
-## Requisitos
+## Project Structure
 
+```bash
+koral/
+├── koral/
+│   ├── io.py         # Functions for data import/export
+│   ├── core.py       # Basic data processing and analysis
+│   ├── viz.py        # Visualization using matplotlib/seaborn
+│   └── __init__.py   # Initializes the KORAL package
+├── exemplo.csv       # Sample dataset for testing
+├── test_script.py    # Usage example script
+```
+
+---
+
+## Requirements
+```bash
 pip install pandas matplotlib seaborn openpyxl
+```
 
-## Exemplo de uso
+---
 
-from coral.io import read_csv, export_csv
-from coral.core import clean_data, summary_stats
-from coral.viz import plot_bar
+## Example Usage
+```python
+from koral.io import read_csv, export_csv
+from koral.core import clean_data, summary_stats
+from koral.viz import plot_bar
 
+# Read dataset
 df = read_csv('exemplo.csv')
-df_limpo = clean_data(df)
-summary_stats(df_limpo)
-plot_bar(df_limpo, x='Categoria', y='Valor')
-export_csv(df_limpo, 'resultado.csv')
 
-## Contribuição
+# Clean data (handle/remove missing values)
+df_clean = clean_data(df)
 
-Este projeto é educacional e pode ser expandido com novos módulos ou funções.
-Sinta-se à vontade para adaptar ao seu próprio aprendizado.
+# Get descriptive statistics
+summary_stats(df_clean)
 
-Desenvolvido por Arthur Pereira como exercício prático de estruturação de biblioteca Python.
+# Plot bar chart for specific columns
+plot_bar(df_clean, x='Categoria', y='Valor')
+
+# Export cleaned data to CSV
+export_csv(df_clean, 'resultado.csv')
+```
+
+---
+
+
+## How to Contribute
+
+You can:
+
+- Add new modules and functions for additional analysis operations  
+- Improve documentation and usage examples  
+- Fix bugs and optimize existing code  
+
+Feel free to use, modify, and adapt this code for your learning and personal projects.
+
+---
+
+## About the Author
+
+Developed by **Arthur Pereira** as a practical exercise in structuring and organizing a Python library focused on data analysis.
+
+> 🇧🇷 This is an educational project developed in Brazil.
+
 
 
